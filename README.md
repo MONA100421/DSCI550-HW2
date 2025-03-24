@@ -27,7 +27,7 @@ Source Code/
   ├── image_captioning.py
   ├── update_dataset.py
   ├── notebook/                # Contains any Jupyter Notebooks used
-TEAM_XX_EXTRACT.pdf          # Final report (4 pages)
+TEAM_03_EXTRACT.pdf          # Final report (4 pages)
 v2_dataset.tsv               # Updated dataset with new features
 Readme.txt                   # This file
 Requirements.txt             # All required libraries with version info
