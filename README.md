@@ -17,22 +17,21 @@ We created a new version of our dataset (v2), which includes the following newly
 ------------------------------------------------------------
 2. Folder Structure
 ------------------------------------------------------------
-
-TEAM_XX_DSCI550_HW_EXTRACT/
-├── Data/
-│   └── dataset1/                 # Empty folder as instructed
-├── Source Code/
-│   ├── geolocation_extraction.py
-│   ├── entity_extraction.py
-│   ├── image_generation.py
-│   ├── image_captioning.py
-│   ├── update_dataset.py
-│   └── notebook/                # Contains any Jupyter Notebooks used
-├── TEAM_XX_EXTRACT.pdf          # Final report (4 pages)
-├── v2_dataset.tsv               # Updated dataset with new features
-├── Readme.txt                   # This file
-├── Requirements.txt             # All required libraries with version info
-
+```bash
+Data/
+  ├── dataset1/                 # Empty folder as instructed
+Source Code/
+  ├── geolocation_extraction.py
+  ├── entity_extraction.py
+  ├── image_generation.py
+  ├── image_captioning.py
+  ├── update_dataset.py
+  ├── notebook/                # Contains any Jupyter Notebooks used
+TEAM_XX_EXTRACT.pdf          # Final report (4 pages)
+v2_dataset.tsv               # Updated dataset with new features
+Readme.txt                   # This file
+Requirements.txt             # All required libraries with version info
+```
 ------------------------------------------------------------
 3. Tools and Libraries Used
 ------------------------------------------------------------
