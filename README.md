@@ -1,8 +1,6 @@
 # TEAM03-DSCI 550: Large Scale Data Extraction & Analysis for Haunted Places
 
-------------------------------------------------------------
 ## 1. Overview
-------------------------------------------------------------
 This assignment extends the first homework on Haunted Places by incorporating advanced large-scale data extraction techniques, including geolocation parsing, named entity recognition (NER), generative AI image creation, image captioning, and object recognition.
 
 We created a new version of our dataset (v2), which includes the following newly extracted features:
@@ -12,9 +10,7 @@ We created a new version of our dataset (v2), which includes the following newly
 - Automatically generated image captions (via Tika’s Show & Tell)
 - Detected objects in each image (via Tika Vision)
 
-------------------------------------------------------------
 ## 2. Folder Structure
-------------------------------------------------------------
 ```bash
 Data/
   ├── dataset1/                 # Empty folder as instructed
@@ -30,9 +26,7 @@ v2_dataset.tsv               # Updated dataset with new features
 Readme.txt                   # This file
 Requirements.txt             # All required libraries with version info
 ```
-------------------------------------------------------------
 ## 3. Tools and Libraries Used
-------------------------------------------------------------
 
 - **Python 3.10+**
 - **Tika Python**: for content extraction
@@ -56,9 +50,7 @@ Other Python libraries used:
 
 All libraries and versions are listed in `Requirements.txt`.
 
-------------------------------------------------------------
 ## 4. How to Run
-------------------------------------------------------------
 
 ### **Step 1: Install all Python dependencies:**
 ```bash
@@ -90,18 +82,14 @@ python entity_extraction.py
 python update_dataset.py
 ```
 
-------------------------------------------------------------
 ## 5. Notes
-------------------------------------------------------------
 
 - All scripts use **relative paths**.
 - We generated images using: [Insert Tool Name Here]
 - Make sure Docker is running before executing image captioning.
 - If you use API keys or tokens (e.g. OpenAI), store them securely as environment variables.
 
-------------------------------------------------------------
 ## 6. Team Members
-------------------------------------------------------------
 
 Team 3:
 - **Zili Yang** ([ziliy@usc.edu](mailto:ziliy@usc.edu))
