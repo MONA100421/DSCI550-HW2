@@ -1,7 +1,7 @@
-#TEAM03-DSCI 550: Large Scale Data Extraction & Analysis for Haunted Places
+# TEAM03-DSCI 550: Large Scale Data Extraction & Analysis for Haunted Places
 
 ------------------------------------------------------------
-##1. Overview
+## 1. Overview
 ------------------------------------------------------------
 This assignment extends the first homework on Haunted Places by incorporating advanced large-scale data extraction techniques, including geolocation parsing, named entity recognition (NER), generative AI image creation, image captioning, and object recognition.
 
@@ -13,7 +13,7 @@ We created a new version of our dataset (v2), which includes the following newly
 - Detected objects in each image (via Tika Vision)
 
 ------------------------------------------------------------
-##2. Folder Structure
+## 2. Folder Structure
 ------------------------------------------------------------
 ```bash
 Data/
@@ -31,7 +31,7 @@ Readme.txt                   # This file
 Requirements.txt             # All required libraries with version info
 ```
 ------------------------------------------------------------
-##3. Tools and Libraries Used
+## 3. Tools and Libraries Used
 ------------------------------------------------------------
 
 - **Python 3.10+**
@@ -57,7 +57,7 @@ Other Python libraries used:
 All libraries and versions are listed in `Requirements.txt`.
 
 ------------------------------------------------------------
-##4. How to Run
+## 4. How to Run
 ------------------------------------------------------------
 
 ### **Step 1: Install all Python dependencies:**
@@ -91,7 +91,7 @@ python update_dataset.py
 ```
 
 ------------------------------------------------------------
-##5. Notes
+## 5. Notes
 ------------------------------------------------------------
 
 - All scripts use **relative paths**.
@@ -100,7 +100,7 @@ python update_dataset.py
 - If you use API keys or tokens (e.g. OpenAI), store them securely as environment variables.
 
 ------------------------------------------------------------
-##6. Team Members
+## 6. Team Members
 ------------------------------------------------------------
 
 Team 3:
