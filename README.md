@@ -1,4 +1,4 @@
-TEAM 03 - DSCI 550: Spring 2025
+DSCI 550: Spring 2025
 Team 03
 Assignment: Large Scale Data Extraction & Analysis for Haunted Places
 
