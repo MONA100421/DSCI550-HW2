@@ -7,7 +7,7 @@ import time
 # ---------------------------
 # Configuration and Constants
 # ---------------------------
-INPUT_TSV = "Data/haunted_places_v1.tsv"       # Your input dataset (TSV)
+INPUT_TSV = "Data/haunted_places_v1.tsv"       # Input dataset (TSV)
 OUTPUT_TSV = "Data/haunted_places_v2.tsv"        # Updated dataset with image paths
 IMAGES_DIR = "Data/images"                       # Directory to save generated images
 
@@ -15,31 +15,42 @@ IMAGES_DIR = "Data/images"                       # Directory to save generated i
 os.makedirs(IMAGES_DIR, exist_ok=True)
 print(f"Images will be saved to: {IMAGES_DIR}")
 
-# Set device to CPU (or "cuda" if GPU is available)
-device = "cpu"  # Change to "cuda" if you are using a GPU
-torch_dtype = torch.float32  # Use full precision on CPU
+# Set device to GPU if available; else CPU
+device = "cuda" if torch.cuda.is_available() else "cpu"
+# Use full precision on CPU; if GPU is available, you could use fp16 but here we keep it simple.
+torch_dtype = torch.float32
 
-# Model ID for a lighter model: Stable Diffusion 1.5 pruned-emaonly
+# Model ID for Stable Diffusion 1.5 pruned-emaonly (lighter for CPU)
 model_id = "runwayml/stable-diffusion-v1-5"
 
-# Load the pipeline (weights will be downloaded automatically on first run)
 print("Loading model...")
 pipe = StableDiffusionPipeline.from_pretrained(
     model_id,
     torch_dtype=torch_dtype,
     use_safetensors=True,
 )
-# Convert UNet to full precision to ensure compatibility on CPU
+# Force full precision for CPU compatibility
 pipe.unet = pipe.unet.float()
 pipe = pipe.to(device)
 print("Model loaded successfully.")
+
+# ---------------------------
+# Reduced Quality / Faster Generation Settings
+# ---------------------------
+# Lower resolution to reduce computation (e.g., 384x384 instead of 512x512)
+HEIGHT = 384
+WIDTH = 384
+# Reduce the number of inference steps (default 30 -> 10)
+NUM_INFERENCE_STEPS = 10
+# Lower guidance scale (default 7 -> 5)
+GUIDANCE_SCALE = 5
 
 # ---------------------------
 # Function Definitions
 # ---------------------------
 def create_prompt(record):
     """
-    Construct a prompt using fields from the record.
+    Build a text prompt using dataset fields without extra descriptive additions.
     Uses 'description', 'city', 'state', and 'apparition type'.
     """
     description = record.get("description", "")
@@ -47,18 +58,22 @@ def create_prompt(record):
     state = record.get("state", "")
     apparition = record.get("apparition type", "")
     
-    # Construct the prompt without any extra words.
     prompt = f"Haunted scene in {city}, {state}. {description} Apparition: {apparition}."
     return prompt
 
 def generate_and_save_image(prompt, idx):
     """
-    Generate an image for a given prompt and save it.
-    Returns the relative path if successful.
+    Generate an image using the pipeline with reduced quality settings,
+    save it to disk, and return the relative path.
     """
     try:
-        # Generate the image using 30 inference steps and guidance scale of 7.
-        image = pipe(prompt=prompt, num_inference_steps=30, guidance_scale=7).images[0]
+        image = pipe(
+            prompt=prompt,
+            num_inference_steps=NUM_INFERENCE_STEPS,
+            guidance_scale=GUIDANCE_SCALE,
+            height=HEIGHT,
+            width=WIDTH
+        ).images[0]
         filename = f"haunted_image_{idx}.png"
         image_path = os.path.join(IMAGES_DIR, filename)
         image.save(image_path)
@@ -80,18 +95,18 @@ def main():
     # Add a new column for the image paths
     df["ai_image_path"] = ""
 
-    # Process each record to generate an image
+    # Process each record
     for idx, row in df.iterrows():
         prompt = create_prompt(row)
-        print(f"Record {idx} prompt: {prompt[:80]}...")  # Show first 80 characters
-
+        print(f"Record {idx} prompt: {prompt[:80]}...")  # Display first 80 characters
+        
         image_rel_path = generate_and_save_image(prompt, idx)
         if image_rel_path:
             df.at[idx, "ai_image_path"] = image_rel_path
         else:
             print(f"Skipping record {idx} due to generation failure.")
-
-        # Pause briefly between requests (adjust as needed)
+        
+        # Pause briefly to mitigate any potential rate issues
         time.sleep(1)
 
     # Save the updated dataset
