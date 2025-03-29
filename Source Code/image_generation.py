@@ -41,9 +41,9 @@ print("Model loaded successfully.")
 HEIGHT = 384
 WIDTH = 384
 # Reduce the number of inference steps (default 30 -> 10)
-NUM_INFERENCE_STEPS = 10
+NUM_INFERENCE_STEPS = 15
 # Lower guidance scale (default 7 -> 5)
-GUIDANCE_SCALE = 5
+GUIDANCE_SCALE = 7
 
 # ---------------------------
 # Function Definitions
