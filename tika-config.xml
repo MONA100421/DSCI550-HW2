@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <properties>
   <resources>
-    <!-- Register your custom REST resource -->
     <resource class="edu.usc.ir.geo.gazetteer.api.SearchResource"/>
   </resources>
   <geo>
     <gazetteer class="org.apache.tika.parser.geo.topic.RESTGeoGazetteer">
-      <!-- This tells the geo parser where the server is; leave as is -->
       <param name="endpoint" value="http://localhost:8765/"/>
     </gazetteer>
   </geo>
