@@ -97,9 +97,9 @@ def main():
 
     # Process each record
     for idx, row in df.iterrows():
-        if idx < 2000:
+        if idx < 3000:
             continue
-        if idx > 3000:
+        if idx > 4000:
             continue
         prompt = create_prompt(row)
         print(f"Record {idx} prompt: {prompt[:80]}...")  # Display first 80 characters
