@@ -97,7 +97,7 @@ def main():
 
     # Process each record
     for idx, row in df.iterrows():
-        if idx < 730:
+        if idx < 1206:
             continue
         if idx > 2000:
             continue
