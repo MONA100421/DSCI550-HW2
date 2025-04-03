@@ -26,7 +26,7 @@ def main():
     #print(df.iloc[100:110])
     
     # Create a subset for rows 100 to 999 (i.e. 100-1000)
-    df_subset = df.iloc[1003:2000].copy()
+    df_subset = df.iloc[3000:3500].copy()
     detected_entities = []
     
     for i, row in df_subset.iterrows():
