@@ -52,7 +52,7 @@ def main():
             caption = ""
         
         df.loc[i, "detected_objects"] = caption
-        time.sleep(0.5)
+        #time.sleep(0.5)
     
     output_filename = "Data/haunted_places_v2_with_objects.tsv"
     df.to_csv(output_filename, sep="\t", index=False)
