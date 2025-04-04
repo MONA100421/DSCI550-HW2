@@ -16,7 +16,6 @@ The final dataset (`haunted_places_final_v2.tsv`) contains **10,974 rows** with 
 
 ```bash
 Data/
-├── dataset1/                           # Empty folder (per instruction)
 ├── haunted_places_v1.tsv              # Original dataset
 ├── haunted_places_v2.tsv              # With AI image paths
 ├── haunted_places_v2_with_objects.tsv # With detected objects
@@ -38,7 +37,7 @@ Source Code/
 Others/
 ├── Requirements.txt
 ├── tika-config.xml
-├── README.md                          # This file
+├── README.md                          
 ├── TEAM_03_EXTRACT.pdf                # Final report
 ```
 
