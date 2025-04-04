@@ -22,7 +22,6 @@ Data/
 ├── haunted_places_geoparsed.csv       # With GeoTopicParser lat/lon
 ├── merged_data_v2_with_entities.tsv   # With NER entities
 ├── haunted_places_final_v2.tsv        # Final merged dataset
-
 Source Code/
 ├── add_ai_image_paths.py              # Adds AI-generated image filenames
 ├── add_entities.py                    # Adds captions/objects using Tika REST
@@ -33,12 +32,10 @@ Source Code/
 ├── image_generation.py                # Image generation with Stable Diffusion
 ├── named_entity_recognition.ipynb     # SpaCy pipeline + Named_Entities column
 ├── update_dataset.ipynb               # Final merge script
-
-Others/
-├── Requirements.txt
-├── tika-config.xml
-├── README.md                          
-├── TEAM_03_EXTRACT.pdf                # Final report
+Requirements.txt
+tika-config.xml
+README.md                          
+TEAM_03_EXTRACT.pdf                # Final report
 ```
 
 ## 3. 🛠 Tools & Libraries Used
