@@ -114,9 +114,9 @@ Final file: `Data/haunted_places_final_v2.tsv`
 ## 6. 👩‍💻 Team Members
 
 **Team 03**
+- 🧠 Colin Leahey ([cleahey@usc.edu](mailto:cleahey@usc.edu))  
 - 🧠 Zili Yang ([ziliy@usc.edu](mailto:ziliy@usc.edu))  
 - 🧠 Chen Yi Weng ([wengchen@usc.edu](mailto:wengchen@usc.edu))  
 - 🧠 Aadarsh Sudhir Ghiya ([aadarshs@usc.edu](mailto:aadarshs@usc.edu))  
 - 🧠 Niromikha Jayakumar ([njayakum@usc.edu](mailto:njayakum@usc.edu))  
 - 🧠 Yung Yee Chia ([yungyeec@usc.edu](mailto:yungyeec@usc.edu))  
-- 🧠 Colin Leahey ([cleahey@usc.edu](mailto:cleahey@usc.edu))  
