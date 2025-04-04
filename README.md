@@ -16,6 +16,7 @@ The final dataset (`haunted_places_final_v2.tsv`) contains **10,974 rows** with 
 
 ```bash
 Data/
+├──images/                             # AI-generated images
 ├── haunted_places_v1.tsv              # Original dataset
 ├── haunted_places_v2.tsv              # With AI image paths
 ├── haunted_places_v2_with_objects.tsv # With detected objects
@@ -31,7 +32,8 @@ Source Code/
 ├── image_captioning.py                # Batch version using Tika REST
 ├── image_generation.py                # Image generation with Stable Diffusion
 ├── named_entity_recognition.ipynb     # SpaCy pipeline + Named_Entities column
-├── update_dataset.ipynb               # Final merge script
+├── update_dataset.ipynb               
+├── SearchResource.java
 Requirements.txt
 tika-config.xml
 README.md                          
